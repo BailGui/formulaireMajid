@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleformulaire.css">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <div class="form1">
+        <div id="age-form">
+            <h2>Entrez votre âge :</h2>
+            <form id="ageInputForm">
+                <input class="agebouton"type="number" id="ageInput" placeholder="Votre âge" required>
+                <button class="agebouton"type="button" onclick="checkAge()">Vérifier l'âge</button>
+            </form>
+            <div id="result"></div>
+        </div>
+   
+        <script>
+            function checkAge() {
+                var ageInput = document.getElementById('ageInput').value;
+                var resultDiv = document.getElementById('result');
+               
+                if (ageInput >= 18) {
+                    resultDiv.textContent = "Vous avez 18 ans ou plus ! Redirection en cours...";
+                    resultDiv.style.color = "green";
+                    setTimeout(function () {
+                        window.location.href = "formulaire.html";
+                    }, 1000);
+                } else {
+                    resultDiv.textContent = "Vous n'avez pas l'âge requis.";
+                    resultDiv.style.color = "red";
+                }
+   
+                resultDiv.style.display = "block";
+            }
+        </script>
+    </body>
+</html>
